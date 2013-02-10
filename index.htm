@@ -1,0 +1,24 @@
+<!doctype html>
+<html land="en">
+<head>
+	<title></title>
+	<script src="lib/css-specificity/specificity.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+	<script src="js/css-specificity-tool.js"></script>
+</head>
+<body>
+
+	<ul class="selectors">
+		<li>
+			<input name="selector" type="text" />
+			<button class="calculate">Calculate</button>
+			<span>Specificity: </span>
+			<span class="specificity-string" data-default="?,?,?,?">?,?,?,?</span>
+			<button class="clear" disabled="disabled">Clear</button>
+			<button class="remove" disabled="disabled">Remove</button>
+		</li>
+	</ul>
+	<button class="add">Calculate another selector's specificity</button>
+
+</body>
+</html>
