@@ -1,0 +1,3 @@
+[submodule "lib/css-specificity"]
+	path = lib/css-specificity
+	url = https://github.com/johannesneumeier/css-specificity.git
