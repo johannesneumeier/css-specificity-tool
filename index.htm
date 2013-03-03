@@ -1,24 +1,134 @@
 <!doctype html>
 <html land="en">
 <head>
-	<title></title>
+	<title>CSS specificity tool - calculates CSS selector precedence</title>
+	<link rel="stylesheet" href="style/css-specificity-tool.css" type="text/css" />
+	<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Kreon:300,700" type="text/css" />
 	<script src="lib/css-specificity/specificity.js"></script>
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+	<!--[if lt IE 9]>
+	<script src="lib/html5shiv.js"></script>
+	<![endif]-->
 	<script src="js/css-specificity-tool.js"></script>
 </head>
 <body>
-
+	<h1>
+		<span class="small">
+			<a href="http://johannesneumeier.com/">johannes&nbsp;neumeier.com</a> / 
+			tools / 
+		</span>
+		<a href="http://johannesneumeier.com/tools/specificity">CSS Specificity Tool</a>
+		<span class="small">v 0.1</span>
+	</h1>
+	<p>
+		Paste your <abbr title="Cascading Style Sheet">CSS</abbr> selector here 
+		and compare different selectors&rsquo; specificity by adding and sorting them.
+	</p>
+	<p>
+		Hover over the different specificity parts to see which part of the 
+		selector they are calculated from.
+	</p>
+	<h2>CSS selectors to calculate</h2>
 	<ul class="selectors">
-		<li>
+		<li data-specificity="0,0,0,0">
 			<input name="selector" type="text" />
 			<button class="calculate">Calculate</button>
 			<span>Specificity: </span>
-			<span class="specificity-string" data-default="?,?,?,?">?,?,?,?</span>
+			<code class="specificity-string">
+				<span class="specificity-a specificity-undefined">?</span>,<span class="specificity-b specificity-undefined">?</span>,<span class="specificity-c specificity-undefined">?</span>,<span class="specificity-d specificity-undefined">?</span>
+			</code>
 			<button class="clear" disabled="disabled">Clear</button>
 			<button class="remove" disabled="disabled">Remove</button>
 		</li>
 	</ul>
-	<button class="add">Calculate another selector's specificity</button>
+	<button class="add">Add another selector</button>
+	<button class="sort" disabled="disabled">Sort specificity</button>
 
+	<h3>Information</h3>
+	<p>
+		The way CSS declarations are applied to rendered elements depends on each
+		selector&rsquo;s specificity. This refers to the calculated &lsquo;strength&rsquo;
+		of that selector. Generally speaking, more specific selectors should take
+		precedence over more general selectors.
+	</p>
+	<p>
+		For instance: <code>body { color: grey; }</code> is a very general selector
+		setting the color of all document text to grey. <code>header nav { color: red; }</code>
+		is more specific. The same for <code>#navigation { color: red; }</code>.
+		Both are more specific, either due to more precise elements or because of
+		an ID selector that identifies one very element only.
+	</p>
+	<p>
+		By inputting your selectors in the above calculator you can find out
+		which selector&rsquo;s specificity is strongest.
+	</p>
+
+	<h4>Additional information about CSS specificity</h4>
+	<ul>
+		<li>
+			<a href="http://www.w3.org/TR/CSS21/cascade.html#specificity">
+				http://www.w3.org/TR/CSS21/cascade.html#specificity
+			</a> - official w3 documentation
+		</li>
+		<li>
+			<a href="http://css-tricks.com/specifics-on-css-specificity/">
+				http://css-tricks.com/specifics-on-css-specificity/
+			</a> - article with further explanation and examples
+		</li>
+	</ul>
+
+	<h5>Disclaimer</h5>
+	<em>
+		You can use this tool &ldquo;as is&rdquo; without any warranty or 
+		garanties of correctness.
+	</em>
+	<ul>
+		<li>
+			<em>
+				The tool falsely calculates <code>:not()</code> selector pseudo 
+				attributes, which it should not do.
+			</em>
+		</li>
+		<li>
+			<em>
+				Currently there is no way of inputting or processing 
+				<code>style=""</code> inline selectors, i.e., this means the
+				first numeric part of the specificity will never show as counted.
+			</em>
+		</li>
+		<li>
+			<em>
+				<code>!important</code> declarations always overwrite calculated
+				specificity, be mindful when using it for this very reason.
+			</em>
+		</li>
+	</ul>
+
+	<h6>Change history</h6>
+	<ol class="small">
+		<li>v 0.1 - 2013-03-03 - initial release
+	</ol>
+
+	<footer>
+		<p>
+			Created by <a href="http://johannesneumeier.com">Johannes 
+			&lsquo;kontur&rsquo; Neumeier</a>. 
+			Feel welcome to 
+			<a href="https://twitter.com/intent/tweet?screen_name=kontur&text=Feedback" class="twitter-mention-button">Tweet feedback to @kontur</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+			or <a href="mailto:hello@johannesneumeier.com?subject=Tools / Specificity">
+			email me</a> your feedback.
+		</p>
+		<p>
+			The javascript module to calculate css specificity is 
+			<a href="https://github.com/johannesneumeier/css-specificity">available 
+				on github</a> for use in any projects of your own.
+		</p>
+		<p>
+			And you can add to this page by submitting a pull request to 
+			<a href="https://github.com/johannesneumeier/css-specificity-tool/">this 
+				repository on github</a>.
+		</p>
+	</footer>
 </body>
 </html>

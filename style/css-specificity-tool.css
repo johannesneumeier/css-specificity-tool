@@ -1,0 +1,154 @@
+body {
+	color: #5A2B50;
+	font-family: 'Kreon';
+	margin: 0 auto 3em;
+	max-width: 50em;
+}
+
+button {
+	background: #8B0;
+	border: 1px solid #8B0;
+	border-radius: .3em;
+	box-shadow: inset 0.15em 0.15em 0 #FFF, inset -0.15em -0.15em 0 #FFF, inset -0.15em 0.15em 0 #FFF, inset 0.15em -0.15em 0 #FFF;
+	color: #FFF;
+	cursor: pointer;
+	font-family: 'Kreon';
+	font-weight: bold;
+	padding: 0.2em 0.5em;
+	text-shadow: 0 0 1px #690;
+	text-transform: uppercase;
+	transition: all ease-in-out 0.25s;
+}
+
+body button[disabled] {
+	background: #CCC;
+	border-color: #CCC;
+	color: #AFAFAF;
+	cursor: not-allowed;
+	text-shadow: none;
+}
+
+button.clear {	
+	background: #09F;
+	border: 1px solid #09F;
+	text-shadow: 0 0 1px #069;
+}
+
+button.remove {
+	background: #D30;
+	border: 1px solid #D30;
+	text-shadow: 0 0 1px #930;
+}
+
+.selectors {
+	list-style-type: none;
+	padding: 0;
+}
+
+ol {
+	list-style-type: none;
+}
+
+.selectors > li {
+	margin: 0 0 1em;
+}
+
+.small {
+	font-size: small;
+}
+
+[title] {
+	cursor: help;
+}
+
+input[type="text"] {
+	background: #FFF;
+	border: 1px solid #333;
+	border-radius: .3em;
+	font-family: inherit;
+	font-size: larger;
+	font-weight: bold;
+	padding: 0.2em 0.5em;
+	width: 15em;
+}
+
+.specificity-string {
+	background: none;
+	display: inline-block;
+	text-align: right;
+	padding: 0 0.5em;
+	margin: 0 2em 0 0;
+	width: 12em;
+}
+
+.specificity-string span {
+	background: #CCC;
+	border: 1px solid #CCC;
+	border-radius: 2em;
+	box-shadow: inset 0.15em 0.15em 0 #FFF, inset -0.15em -0.15em 0 #FFF, inset -0.15em 0.15em 0 #FFF, inset 0.15em -0.15em 0 #FFF;	
+	cursor: help;
+	display: inline-block;
+	padding: 0.5em;
+	position: relative;
+	text-align: center;
+	width: 1.25em;
+}
+
+.specificity-string ul {
+	background: none repeat scroll 0 0 #CCCCCC;
+	border: 1px solid #CCC;
+	border-radius: 1em;
+	box-shadow: inset 0.15em 0.15em 0 #FFF, inset -0.15em -0.15em 0 #FFF, inset -0.15em 0.15em 0 #FFF, inset 0.15em -0.15em 0 #FFF;	
+	display: none;
+	left: 1.25em;
+	list-style-type: none;
+	padding: 1em;
+	position: absolute;
+	text-align: left;
+	top: 1.25em;
+	z-index: 9;
+}
+
+footer {
+	border-top: 1px solid #CCC;
+	font-size: smaller;
+	margin: 5em auto 0;
+	padding: 0.5em 0;
+}
+
+a {
+	border-bottom: 1px dotted #427DB4;
+	text-decoration: none;
+}
+
+a:link {
+	color: #427DB4;
+}
+
+a:hover, a:focus {
+	border-bottom-style: solid;
+}
+
+a:visited {
+	border-bottom-color: #525DB4;
+	color: #525DB4;
+}
+
+h1, h1, h2, h3, h4, h5, h6, p {
+	margin: 0.75em 0 0.25em;
+}
+
+h2, h3, h4, h5, h6 {
+	margin-top: 3em;
+}
+
+em {	
+	display: block;
+}
+
+code {
+	background: #CCC;
+	border-radius: 0.5em;
+	display: inline-block;
+	padding: 0 0.5em;
+}
