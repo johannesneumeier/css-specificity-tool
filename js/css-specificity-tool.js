@@ -118,8 +118,7 @@ Tool.clearRow = function () {
 	var $li = $(this).parent();
 
 	$li.find('input[name="selector"]').val("");
-	$li.find('.specificity-string')
-		.html(Tool.onResetDefaultTo);
+	$li.find('.specificity-string').html(Tool.onResetDefaultTo);
 
 }
 
@@ -192,7 +191,7 @@ Tool.hideMatchesTooltip = function () {
 	var $ul = $(this).parentsUntil('li').parent().find('.specificity-string ul');
 
 	$ul.fadeOut('fast', function () {
-		remove();
+		$(this).remove();
 	});
 
 }
